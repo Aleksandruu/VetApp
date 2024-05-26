@@ -1,0 +1,30 @@
+@import "@styles/variables.scss";
+
+.navbar {
+  width: calc(100vw - 6rem);
+  border-bottom: 2px solid $gray;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 3rem;
+  box-sizing: border-box;
+  padding-left: 3rem;
+  background: white;
+  z-index: 10;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: $dark-gray;
+  box-sizing: border-box;
+  padding-bottom: 1rem;
+}
+
+.selected {
+  color: black;
+  border-bottom: 6px solid $primary;
+  padding-bottom: 10px;
+}

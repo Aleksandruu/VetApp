@@ -1,0 +1,29 @@
+@import "@styles/variables.scss";
+
+.icon-nav {
+  width: 2rem;
+  filter: invert(80%) sepia(0%) saturate(2401%) hue-rotate(16deg)
+    brightness(89%) contrast(98%);
+}
+
+.icon-nav-selected {
+  filter: invert(49%) sepia(53%) saturate(2990%) hue-rotate(312deg)
+    brightness(101%) contrast(103%);
+}
+
+.side-nav {
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-right: 2px solid $gray;
+  gap: 3rem;
+  background: white;
+  z-index: 11;
+}

@@ -1,0 +1,15 @@
+<div class="card">
+  <img class="photo-doctor" [src]="doctor.photoUrl" alt="photo of the doctor" />
+  <div class="data">
+    <p class="name">{{ doctor.name }}</p>
+    <p class="type">{{ doctor.type }}</p>
+    <p class="rating">
+      <img
+        class="star-icon"
+        src="../../../../assets/icons/star-regular.svg"
+        alt="star icon"
+      />
+      {{ doctor.rating }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+@import "../../../../styles/variables.scss";
+
+.photo-doctor {
+  aspect-ratio: 1;
+  width: 7rem;
+  border-radius: 3.5rem;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.data > p {
+  margin-top: 0;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.type {
+  font-size: 18px;
+  color: $dark-gray;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  color: $dark-gray;
+}
+
+.star-icon {
+  position: relative;
+  top: 0.2rem;
+  aspect-ratio: 1;
+  width: 1.2rem;
+  filter: invert(76%) sepia(15%) saturate(816%) hue-rotate(341deg)
+    brightness(106%) contrast(95%);
+}

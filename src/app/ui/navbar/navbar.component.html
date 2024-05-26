@@ -1,0 +1,23 @@
+<div class="navbar">
+  <button
+    class="nav-link btn"
+    (click)="navigateToMyAppointments()"
+    [class.selected]="tabMap.get(1)"
+  >
+    My appointments
+  </button>
+  <button
+    class="nav-link btn"
+    (click)="navigateToAllAppointments()"
+    [class.selected]="tabMap.get(2)"
+  >
+    All appointments
+  </button>
+  <button
+    class="nav-link btn"
+    (click)="navigateToAddAppointment()"
+    [class.selected]="tabMap.get(3)"
+  >
+    Add appointment
+  </button>
+</div>

@@ -1,0 +1,119 @@
+@import "@styles/variables.scss";
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100vw - 6rem);
+  height: 14rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: white;
+  z-index: 10;
+}
+
+.top-nav-upper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .top-nav-upper {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.photo {
+  aspect-ratio: 1;
+  width: 8rem;
+  border-radius: 4rem;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  color: $dark-gray;
+}
+
+@media screen and (max-width: 1050px) {
+  .info {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .info > p {
+    margin: 0;
+  }
+}
+
+.number-tasks {
+  font-size: 20px;
+  color: black;
+  line-height: 16px;
+}
+
+.btn-more,
+.btn-edit-profile {
+  height: 3rem;
+  border-radius: 10px;
+  border: 1px solid $dark-gray;
+}
+
+.btn-more {
+  width: 3rem;
+  background-color: $dark-gray;
+}
+
+.btn-more > img {
+  height: 2rem;
+  transform: rotate(90deg);
+  filter: invert(100%) sepia(0%) saturate(6715%) hue-rotate(261deg)
+    brightness(128%) contrast(106%);
+}
+
+.btn-edit-profile {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: white;
+  padding: 0 3rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-nav-filler {
+  height: 14rem;
+}

@@ -1,0 +1,18 @@
+.btn {
+  cursor: pointer;
+}
+
+.card {
+  width: 25rem;
+  height: 9rem;
+  border-radius: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  box-shadow: 0 0 15px lightgray;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}

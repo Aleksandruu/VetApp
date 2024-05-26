@@ -1,0 +1,22 @@
+<div class="top-nav">
+  <div class="top-nav-upper">
+    <div class="profile">
+      <img class="photo" [src]="profile.photoUrl" alt="photo of the doctor" />
+      <div class="details">
+        <p class="name">{{ profile.name }}</p>
+        <div class="info">
+          <p><span class="number-tasks">7</span> tasks today</p>
+          <p>{{ profile.type }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="btn-more btn">
+        <img src="../../../assets/icons/dots-options.svg" alt="options" />
+      </button>
+      <button class="btn-edit-profile btn">Edit Profile</button>
+    </div>
+  </div>
+  <vet-navbar></vet-navbar>
+</div>
+<div class="top-nav-filler"></div>
