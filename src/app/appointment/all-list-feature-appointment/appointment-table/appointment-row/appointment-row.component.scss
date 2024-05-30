@@ -1,0 +1,55 @@
+@import "@styles/variables.scss";
+
+.tr {
+  width: 100%;
+  cursor: pointer;
+  height: 4rem;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.218);
+  box-sizing: border-box;
+  color: darkgray;
+  font-size: 19px;
+}
+
+.pet {
+  flex: 1;
+}
+
+.doctor {
+  flex: 1.5;
+}
+
+.date {
+  flex: 2;
+}
+
+.diagnosis {
+  flex: 3;
+}
+
+.grip {
+  width: 2rem;
+  height: 4rem;
+  border-radius: 5px 0 0 5px;
+  margin-right: 3rem;
+}
+
+.created {
+  background-color: $primary;
+}
+
+.inProgress {
+  background-color: $dark-gray;
+}
+
+.closed {
+  background-color: $secondary;
+}

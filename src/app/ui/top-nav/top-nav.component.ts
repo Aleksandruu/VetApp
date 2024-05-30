@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IDoctor } from '../doctor.model';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { IDoctor } from '@appointment/data-access-appointment';
 
 @Component({
   selector: 'vet-top-nav',

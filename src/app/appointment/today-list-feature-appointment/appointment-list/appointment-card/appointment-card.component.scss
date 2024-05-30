@@ -1,0 +1,100 @@
+@import "@styles/variables.scss";
+
+.appointment {
+  width: 100%;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px lightgray;
+  display: flex;
+  flex-direction: row;
+  cursor: grab;
+}
+
+.grip {
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.grip-icon {
+  aspect-ratio: 0.7;
+  width: 0.8rem;
+  filter: invert(36%) sepia(1%) saturate(0%) hue-rotate(185deg) brightness(98%)
+    contrast(86%);
+}
+
+.created {
+  background-color: $primary;
+}
+
+.inProgress {
+  background-color: $dark-gray;
+}
+
+.closed {
+  background-color: $secondary;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+.pet-name {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.doctor-name {
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.time-icon {
+  aspect-ratio: 1;
+  width: 1.3rem;
+  filter: invert(36%) sepia(1%) saturate(0%) hue-rotate(185deg) brightness(98%)
+    contrast(86%);
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+
+.date {
+  font-size: 14px;
+  color: rgb(61, 61, 61);
+}
+
+.id-detail-container {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.id {
+  margin-top: 0;
+  color: #339ef3;
+  font-weight: 600;
+}
+
+.detail-link {
+  cursor: pointer;
+  font-size: 19px;
+  color: $primary;
+  font-weight: 600;
+}

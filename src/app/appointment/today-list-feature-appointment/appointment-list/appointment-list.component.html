@@ -1,0 +1,55 @@
+<div class="content-container container">
+  <div
+    class="section todo"
+    cdkDropList
+    #createdList="cdkDropList"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListData]="dragCreatedAppointments"
+    [cdkDropListConnectedTo]="[inProgressList]"
+  >
+    <p class="title">ToDo:</p>
+    @for(appointment of createdAppointments; track appointment.id){
+    <vet-appointment-card
+      cdkDrag
+      class="appointment-card"
+      [appointment]="appointment"
+    ></vet-appointment-card>
+    }
+  </div>
+  <div class="line"></div>
+  <div
+    class="section in-progress"
+    cdkDropList
+    #inProgressList="cdkDropList"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListData]="dragInProgressAppointments"
+    [cdkDropListConnectedTo]="[createdList, closedList]"
+  >
+    <p class="title">In Progres:</p>
+    @for(appointment of inProgressAppointments; track appointment.id){
+    <vet-appointment-card
+      cdkDrag
+      class="appointment-card"
+      [appointment]="appointment"
+    ></vet-appointment-card>
+    }
+  </div>
+  <div class="line"></div>
+  <div
+    class="section done"
+    #closedList="cdkDropList"
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListData]="dragClosedAppointments"
+  >
+    <p class="title">Done:</p>
+    @for(appointment of closedAppointments; track appointment.id){
+    <vet-appointment-card
+      cdkDrag
+      class="appointment-card"
+      [appointment]="appointment"
+    ></vet-appointment-card>
+    }
+  </div>
+  <div class="space"></div>
+</div>

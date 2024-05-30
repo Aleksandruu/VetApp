@@ -1,0 +1,67 @@
+@import "@styles/variables.scss";
+
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.th {
+  width: 95%;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.218);
+  box-sizing: border-box;
+  padding-left: 5rem;
+}
+
+.tr {
+  width: 95%;
+}
+
+.pet {
+  flex: 1;
+}
+
+.doctor {
+  flex: 1.5;
+}
+
+.date {
+  flex: 2;
+}
+
+.diagnosis {
+  flex: 3;
+}
+
+.pagination {
+  display: flex;
+  height: 4rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-btn {
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  border: 1px solid $primary;
+  border-radius: 1rem;
+  color: darkgray;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.page-btn-selected {
+  color: white;
+  background-color: $primary;
+}

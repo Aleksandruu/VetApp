@@ -1,0 +1,33 @@
+<div class="appointment">
+  <div [className]="gripClass">
+    <img
+      class="grip-icon"
+      src="../../../../../assets/icons/grip.svg"
+      alt="grip icon"
+    />
+  </div>
+  <div class="content">
+    <div class="info">
+      <p class="pet-name">
+        {{ pet }}
+      </p>
+      <p class="doctor-name">
+        Dr <span class="bold">{{ doctor }}</span>
+      </p>
+      <p class="date">
+        <img
+          class="time-icon"
+          src="../../../../../assets/icons/clock-regular.svg"
+          alt="clock icon"
+        />
+        {{ appointment.date | customDate }} {{ appointment.hour }}:00
+      </p>
+    </div>
+    <div class="id-detail-container">
+      <p class="id">#{{ appointment.id }}</p>
+      <a class="detail-link" (click)="navigateToAppointmentDetails()"
+        >Details</a
+      >
+    </div>
+  </div>
+</div>

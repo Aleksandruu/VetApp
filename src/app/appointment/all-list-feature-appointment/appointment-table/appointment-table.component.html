@@ -1,0 +1,25 @@
+<div class="table content-container">
+  <div class="th">
+    <p class="pet">Pet</p>
+    <p class="doctor">Doctor</p>
+    <p class="date">Date</p>
+    <p class="diagnosis">Diagnosis</p>
+  </div>
+  @for(appointment of appointments; track appointment.id){
+  <vet-appointment-row
+    class="tr"
+    [appointment]="appointment"
+  ></vet-appointment-row>
+  }
+  <div class="pagination">
+    @for(page of pages;track page){
+    <button
+      class="page-btn"
+      (click)="selectPage(page)"
+      [class.page-btn-selected]="page === selectedPage"
+    >
+      {{ page + 1 }}
+    </button>
+    }
+  </div>
+</div>

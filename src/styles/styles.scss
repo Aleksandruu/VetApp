@@ -16,3 +16,13 @@
   box-sizing: border-box;
   padding: 0 1rem;
 }
+
+.content-container {
+  width: calc(100vw - 34rem);
+}
+
+@media screen and (max-width: 1600px) {
+  .content-container {
+    width: calc(100vw - 6rem);
+  }
+}

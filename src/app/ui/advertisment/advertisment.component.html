@@ -1,9 +1,15 @@
 <div class="advertisment">
-  @for(doctor of doctors; track doctor.name){
-  <vet-doctor-card [doctor]="doctor"></vet-doctor-card>
-  }
-  <p class="title">Event</p>
-  <vet-ad-card [ad]="ads[0]"></vet-ad-card>
-  <p class="title">Community</p>
-  <vet-ad-card [ad]="ads[1]"></vet-ad-card>
+  <div class="col">
+    @for(doctor of doctors; track doctor.name){
+    <vet-doctor-card [doctor]="doctor"></vet-doctor-card>
+    }
+  </div>
+  <div class="col">
+    <p class="title">Event</p>
+    <vet-ad-card [ad]="ads[0]"></vet-ad-card>
+  </div>
+  <div class="col">
+    <p class="title">Community</p>
+    <vet-ad-card [ad]="ads[1]"></vet-ad-card>
+  </div>
 </div>

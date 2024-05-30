@@ -1,0 +1,9 @@
+<div class="tr" (click)="navigateToAppointmentDetails()">
+  <div [className]="gripClass"></div>
+  <p class="pet">{{ pet }}</p>
+  <p class="doctor">{{ doctor }}</p>
+  <p class="date">{{ appointment.date | customDate }}</p>
+  <p class="diagnosis">
+    {{ appointment.diagnosis || "Diagnosis is not set yet!" }}
+  </p>
+</div>

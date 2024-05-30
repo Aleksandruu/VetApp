@@ -1,0 +1,46 @@
+<div class="content-container container">
+  <div class="appointment-info">
+    <p class="id">#{{ appointment.id }}</p>
+
+    <p class="label">Status:</p>
+    <p class="data-text">{{ status[appointment.status] }}</p>
+
+    <p class="label">Doctor Name:</p>
+    <p class="data-text">Dr. {{ doctor.name }}</p>
+
+    <p class="label">Pet Name:</p>
+    <p class="data-text">{{ pet.name }}</p>
+
+    <p class="label">Pet type:</p>
+    <p class="data-text">{{ pet.type }}</p>
+
+    <p class="label">Date:</p>
+    <p class="data-text">{{ appointment.date | customDate }}</p>
+
+    <p class="label">Diagnosis:</p>
+    <p class="data-text">
+      {{ appointment.diagnosis || "Diagnosis is not set yet!" }}
+    </p>
+  </div>
+
+  <div class="pet-column">
+    <p class="pet-name">
+      {{ pet.name }}
+      <span class="pet-type">{{ "(" }}{{ pet.type }}{{ ")" }}</span>
+    </p>
+    <p class="age">
+      Age: <span class="age-value">{{ pet.age }} ani</span>
+    </p>
+    <p class="label">Appointments:</p>
+    <div class="appointments">
+      @for(appointmentData of appointments; track appointmentData.id){
+
+      <vet-appointment-card
+        class="appointment-card"
+        [appointment]="appointmentData"
+      ></vet-appointment-card>
+      }
+    </div>
+  </div>
+  <vet-doctor-card class="doctor-card" [doctor]="doctor"></vet-doctor-card>
+</div>

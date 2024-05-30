@@ -2,10 +2,10 @@ import { Status } from './status.model';
 
 export interface IAppointment {
   id: number;
-  petName: string;
+  petId: number;
   date: Date;
   hour: number;
-  doctorName: string;
+  doctorId: number;
   diagnosis?: string;
-  status: Status.created;
+  status: Status;
 }

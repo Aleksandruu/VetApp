@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IDoctor } from '../../doctor.model';
+import { IDoctor } from '@appointment/data-access-appointment';
 
 @Component({
   selector: 'vet-doctor-card',

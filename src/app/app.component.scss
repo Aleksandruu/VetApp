@@ -1,4 +1,12 @@
 .container {
   background: #f9f9f9;
   margin-left: 6rem;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1600px) {
+  .container {
+    flex-direction: column;
+  }
 }
