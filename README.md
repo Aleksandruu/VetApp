@@ -19,6 +19,8 @@ Si aici cred ca am atins toate cerintele. Pentru alegerea petului am pus o lista
 Data este separata de ora, asa am considerat ca e mai intuitiv, si ora este un select cu ore din 30 de min in 30 de min cu ore cuprinse intre 9 si 17.
 Nu se poate adauga diagnostic de la crearea obiectului ca nu ar avea sens.
 
-#Responsiveness
+# Responsiveness
 Am incercat sa fie cat de cat responsive, as mai fi vrut sa mut bara din stang in partea de jos sub o anumita latime si eventual in tabel randurile sa devina carduri.
 Ca sa ajunga sa arate ok pe mobile ar fi fost nevoie de multe modificari si cred ca ar fi fost destul de greu la pagina cu drag and drop.
+
+Am extras culorile in variabile, am extras si cateva stiluri globale dar nu toate care trebuiau.
