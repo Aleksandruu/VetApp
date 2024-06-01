@@ -1,27 +1,24 @@
 # VetApp
+Legat de date am ales sa folosesc varianta mock pentru ca nu am folosit firebase si nu stiam cat o sa dureze sa invat cum se foloseste.
+In structura proiectului am un folder de util unde se afla pipe uri constanta pentru rute si un validator,
+un folder de ui unde am pus componentele care sunt doar vizuale de pe margine plus navbar 
+si am si folderul appointment unde se afla practic restul aplicatiei.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
+# My Appointments
+Aici cred ca am reusit sa implementez tot ce aveam in cerinta.
 
-## Development server
+# All appointments
+Aici nu am apucat sa implementez sortarea si nici salvarea filtrelor.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Appointments Details
+Aici am reusit sa implementez tot, am facut un sketch la design inainte, cred ca arata destul de ok.
+De aici se poate schimba statusul programarii in "inProgres" si se poate adauga sau schimba diagnosticul.
 
-## Code scaffolding
+# Add/Edit Appointment
+Si aici cred ca am atins toate cerintele. Pentru alegerea petului am pus o lista de carduri in partea dreapta si cel selectat are un border verde.
+Data este separata de ora, asa am considerat ca e mai intuitiv, si ora este un select cu ore din 30 de min in 30 de min cu ore cuprinse intre 9 si 17.
+Nu se poate adauga diagnostic de la crearea obiectului ca nu ar avea sens.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#Responsiveness
+Am incercat sa fie cat de cat responsive, as mai fi vrut sa mut bara din stang in partea de jos sub o anumita latime si eventual in tabel randurile sa devina carduri.
+Ca sa ajunga sa arate ok pe mobile ar fi fost nevoie de multe modificari si cred ca ar fi fost destul de greu la pagina cu drag and drop.
