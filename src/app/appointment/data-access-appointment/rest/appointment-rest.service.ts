@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { APPOINTMENTS } from '../data/appointment.data';
-import { Observable, of } from 'rxjs';
+import { Observable, filter, of } from 'rxjs';
 import { IAppointment } from '../models/appointment.model';
+import { Status } from '../models/status.model';
+import { IFilter } from '@appointment/all-list-feature-appointment/appointment-table/filters.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,12 +11,46 @@ import { IAppointment } from '../models/appointment.model';
 export class AppointmentRestService {
   constructor() {}
 
-  postAppointment(appointment: IAppointment): void {
+  postAppointment(appointment: IAppointment): Observable<null> {
+    let newAppointment = appointment;
+    newAppointment.id = APPOINTMENTS[APPOINTMENTS.length - 1].id + 1;
     APPOINTMENTS.push(appointment);
+    return of(null);
   }
 
-  getAppointments(page = 0): Observable<IAppointment[]> {
-    const appointments: IAppointment[] = APPOINTMENTS.slice(
+  getAppointments(page = 0, filter: IFilter): Observable<IAppointment[]> {
+    let filteredAppointments = APPOINTMENTS;
+
+    if (filter.petId !== 0) {
+      filteredAppointments = filteredAppointments.filter(
+        (appointment) => appointment.petId == filter.petId
+      );
+    }
+
+    if (filter.doctorId !== 0) {
+      filteredAppointments = filteredAppointments.filter((appointment) => {
+        return appointment.doctorId == filter.doctorId;
+      });
+    }
+
+    if (filter.status !== -1) {
+      filteredAppointments = filteredAppointments.filter(
+        (appointment) => appointment.status == filter.status
+      );
+    }
+
+    if (filter.date !== null) {
+      filteredAppointments = filteredAppointments.filter((appointment) => {
+        const date = new Date(filter.date!);
+        return (
+          appointment.date.getDate() === date.getDate() &&
+          appointment.date.getMonth() === date.getMonth() &&
+          appointment.date.getFullYear() === date.getFullYear()
+        );
+      });
+    }
+
+    const appointments: IAppointment[] = filteredAppointments.slice(
       page * 15,
       (page + 1) * 15
     );
@@ -47,21 +83,34 @@ export class AppointmentRestService {
   }
 
   getAppointment(id: number): Observable<IAppointment> {
-    const appointment = APPOINTMENTS.find(
-      (appointment) => appointment.id === id
-    );
+    const appointment = APPOINTMENTS.find((appointment) => {
+      return appointment.id === id;
+    });
     return of(appointment!);
   }
 
-  putAppointment(appointment: IAppointment): void {
+  putAppointment(appointment: IAppointment): Observable<null> {
     const id: number = appointment.id;
-    APPOINTMENTS[id] = appointment;
-  }
-
-  deleteAppointment(id: number): void {
     const index = APPOINTMENTS.findIndex(
       (appointment) => appointment.id === id
     );
-    APPOINTMENTS.splice(index, 1);
+    APPOINTMENTS[index] = appointment;
+    return of(null);
+  }
+
+  setDiagnosis(id: number, diagnosis: string): Observable<null> {
+    const index = APPOINTMENTS.findIndex(
+      (appointment) => appointment.id === id
+    );
+    APPOINTMENTS[index].diagnosis = diagnosis;
+    return of(null);
+  }
+
+  startAppointment(id: number): Observable<null> {
+    const index = APPOINTMENTS.findIndex(
+      (appointment) => appointment.id === id
+    );
+    APPOINTMENTS[index].status = Status.inProgress;
+    return of(null);
   }
 }

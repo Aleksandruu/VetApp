@@ -15,4 +15,15 @@ export class PetRestService {
     });
     return of(pet!);
   }
+
+  getPets(): Observable<IPet[]> {
+    return of(PETS);
+  }
+
+  addPet(pet: IPet): Observable<null> {
+    let newPet = pet;
+    newPet.id = PETS[PETS.length - 1].id + 1;
+    PETS.push(newPet);
+    return of(null);
+  }
 }

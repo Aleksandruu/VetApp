@@ -3,5 +3,5 @@ export const PATHS = {
   APPOINTMENT_DETAILS: 'appointment/',
   ALL_APPOINTMENTS: 'appointment/all',
   ADD_APPOINTMENT: 'appointment/add',
-  EDIT_APPOINTMENTS: 'appointment/edit/',
+  EDIT_APPOINTMENTS: 'appointment/edit',
 };

@@ -8,11 +8,12 @@ import {
   IAppointment,
 } from '@appointment/data-access-appointment';
 import { PetRestService } from '@appointment/data-access-appointment/rest/pet-rest.service';
+import { CustomHourPipe } from '../../../../util/custom-hour.pipe';
 
 @Component({
   selector: 'vet-appointment-card',
   standalone: true,
-  imports: [CustomDatePipe],
+  imports: [CustomDatePipe, CustomHourPipe],
   templateUrl: './appointment-card.component.html',
   styleUrl: './appointment-card.component.scss',
 })

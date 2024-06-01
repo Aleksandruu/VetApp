@@ -1,4 +1,26 @@
 <div class="table content-container">
+  <form class="th" [formGroup]="filterForm" (ngSubmit)="filterResults()">
+    <select class="input" formControlName="petId">
+      <option value="0">Select a pet</option>
+      @for(pet of pets; track pet.id){
+      <option [value]="pet.id">{{ pet.name }}</option>
+      }
+    </select>
+    <select class="input" formControlName="doctorId">
+      <option value="0">Select a doctor</option>
+      @for(doctor of doctors; track doctor.id){
+      <option [value]="doctor.id">{{ doctor.name }}</option>
+      }
+    </select>
+    <select class="input" formControlName="status">
+      <option value="-1">Select a status</option>
+      <option value="0">Created</option>
+      <option value="1">In Progres</option>
+      <option value="2">Done</option>
+    </select>
+    <input class="input" type="date" formControlName="date" />
+    <button class="filter-btn" type="submit">Filter</button>
+  </form>
   <div class="th">
     <p class="pet">Pet</p>
     <p class="doctor">Doctor</p>

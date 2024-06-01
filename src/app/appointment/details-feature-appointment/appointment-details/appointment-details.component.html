@@ -1,6 +1,13 @@
 <div class="content-container container">
   <div class="appointment-info">
-    <p class="id">#{{ appointment.id }}</p>
+    <div class="id-start">
+      <p class="id">#{{ appointment.id }}</p>
+      @if (appointment.status === 0) {
+      <button class="btn btn-secondary" (click)="startAppointment()">
+        Start appointment
+      </button>
+      }
+    </div>
 
     <p class="label">Status:</p>
     <p class="data-text">{{ status[appointment.status] }}</p>
@@ -18,9 +25,23 @@
     <p class="data-text">{{ appointment.date | customDate }}</p>
 
     <p class="label">Diagnosis:</p>
+    @if(!showDiagnosisInput){
     <p class="data-text">
       {{ appointment.diagnosis || "Diagnosis is not set yet!" }}
     </p>
+    } @if(showDiagnosisInput){
+    <form [formGroup]="diagnosisForm">
+      <textarea formControlName="diagnosisControl"></textarea>
+    </form>
+    }
+    <button
+      class="btn btn-primary"
+      (click)="setDiagnosis()"
+      [disabled]="showDiagnosisInput && !diagnosisControl.valid"
+    >
+      Set diagnosis
+    </button>
+    <button class="btn btn-secondary" (click)="navigateToEdit()">Edit</button>
   </div>
 
   <div class="pet-column">

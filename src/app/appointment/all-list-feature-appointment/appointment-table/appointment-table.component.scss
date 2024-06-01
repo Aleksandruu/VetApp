@@ -65,3 +65,21 @@
   color: white;
   background-color: $primary;
 }
+
+.input {
+  margin: 0.5rem 0;
+  height: 2.5rem;
+  border: 2px solid darkgray;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+}
+
+.filter-btn {
+  height: 2.5rem;
+  border: 2px solid darkgray;
+  color: white;
+  background-color: $primary;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+}

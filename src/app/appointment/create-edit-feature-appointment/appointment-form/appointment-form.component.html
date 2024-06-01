@@ -1,1 +1,117 @@
-<p>appointment-form works!</p>
+<div class="content-container container">
+  <form
+    class="appointment-info"
+    [formGroup]="appointmentForm"
+    (ngSubmit)="saveAppointment()"
+  >
+    <label class="label">Doctor:</label>
+    <select
+      formControlName="doctorId"
+      name="doctor"
+      id="doctor"
+      class="input"
+      [class.notValid]="
+        appointmentForm.get('doctorId')?.errors &&
+        (appointmentForm.get('doctorId')?.dirty ||
+          appointmentForm.get('doctorId')?.touched)
+      "
+    >
+      <option value="0">Select a doctor</option>
+      @for(doctor of doctors; track doctor.id){
+      <option [value]="doctor.id">{{ doctor.name }}</option>
+      }
+    </select>
+
+    <label class="label">Date:</label>
+    <input
+      formControlName="date"
+      type="date"
+      class="input"
+      [class.notValid]="
+        appointmentForm.get('date')?.errors &&
+        (appointmentForm.get('date')?.dirty ||
+          appointmentForm.get('date')?.touched)
+      "
+    />
+
+    <label class="label">Hour:</label>
+    <select
+      formControlName="hour"
+      name="hour"
+      id="hour"
+      class="input"
+      [class.notValid]="
+        appointmentForm.get('hour')?.errors &&
+        (appointmentForm.get('hour')?.dirty ||
+          appointmentForm.get('hour')?.touched)
+      "
+    >
+      <option value="0">Select an hour</option>
+      @for(hour of hours; track hour){
+      <option [value]="hour">{{ hour | customHour }}</option>
+      }
+    </select>
+    <button class="save-btn" type="submit" [disabled]="!appointmentForm.valid">
+      Save
+    </button>
+  </form>
+
+  <div class="pet-column">
+    <p class="label">Select a pet:</p>
+    @for(pet of pets; track pet.id){
+    <div
+      class="pet"
+      [class.selectedPet]="selectedPetId === pet.id"
+      (click)="selectPet(pet.id)"
+    >
+      <p class="pet-name">
+        {{ pet.name }}
+        <span class="pet-type">{{ "(" }}{{ pet.type }}{{ ")   " }}</span>
+        <span class="age">
+          Age: <span class="age-value">{{ pet.age }} ani</span>
+        </span>
+      </p>
+    </div>
+    }
+    <div class="pet">
+      <p class="pet-name" (click)="openAddPet()">Add new Pet</p>
+      @if (showPetForm) {
+      <form class="add-pet-form" [formGroup]="petForm" (ngSubmit)="savePet()">
+        <label class="label" for="">Name</label>
+        <input
+          formControlName="name"
+          class="input"
+          type="text"
+          [class.notValid]="
+            petForm.get('name')?.errors &&
+            (petForm.get('name')?.dirty || petForm.get('name')?.touched)
+          "
+        />
+        <label class="label" for="">Type</label>
+        <input
+          formControlName="type"
+          class="input"
+          type="text"
+          [class.notValid]="
+            petForm.get('type')?.errors &&
+            (petForm.get('type')?.dirty || petForm.get('type')?.touched)
+          "
+        />
+        <label class="label" for="">Age</label>
+        <input
+          formControlName="age"
+          class="input"
+          type="number"
+          [class.notValid]="
+            petForm.get('age')?.errors &&
+            (petForm.get('age')?.dirty || petForm.get('age')?.touched)
+          "
+        />
+        <button type="submit" class="save-btn" [disabled]="!petForm.valid">
+          Save
+        </button>
+      </form>
+      }
+    </div>
+  </div>
+</div>
